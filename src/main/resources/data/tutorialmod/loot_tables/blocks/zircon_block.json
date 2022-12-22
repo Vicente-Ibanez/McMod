@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entities": [
+        {
+          "type": "minecraft:item",
+          "name": "tutorialmod:zircon_block"
+        }
+      ]
+    }
+  ]
+}

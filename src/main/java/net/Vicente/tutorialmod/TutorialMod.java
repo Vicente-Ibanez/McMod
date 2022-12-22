@@ -1,5 +1,7 @@
 package net.Vicente.tutorialmod;
 
+import net.Vicente.tutorialmod.block.ModBlocks;
+import net.Vicente.tutorialmod.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,6 +17,12 @@ public class TutorialMod {
 
     public TutorialMod(){
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        // Added from Moditems.java
+        // Registers any item that we add
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
 
         modEventBus.addListener(this::commonSetup);
 
