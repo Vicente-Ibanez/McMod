@@ -1,7 +1,14 @@
 package net.Vicente.tutorialmod;
 
 import net.Vicente.tutorialmod.block.ModBlocks;
+import net.Vicente.tutorialmod.enchantment.ModEnchantments;
+import net.Vicente.tutorialmod.entity.ModEntityTypes;
+import net.Vicente.tutorialmod.entity.client.ModSkeletonRenderer;
+import net.Vicente.tutorialmod.entity.client.ModZombieRenderer;
+import net.Vicente.tutorialmod.event.NightBattles;
 import net.Vicente.tutorialmod.item.ModItems;
+import net.Vicente.tutorialmod.networking.ModMessages;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -23,6 +30,14 @@ public class TutorialMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        // Mod entity types
+        ModEntityTypes.register(modEventBus);
+
+        // Enchantments
+        ModEnchantments.register(modEventBus);
+
+         // Event?
+        NightBattles.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -30,7 +45,7 @@ public class TutorialMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+        ModMessages.register();
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
@@ -38,6 +53,8 @@ public class TutorialMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntityTypes.MODSKELETON.get(), ModSkeletonRenderer::new);
+            EntityRenderers.register(ModEntityTypes.MODZOMBIE.get(), ModZombieRenderer::new);
         }
     }
 }

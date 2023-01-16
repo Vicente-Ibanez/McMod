@@ -1,8 +1,10 @@
 package net.Vicente.tutorialmod.item;
 
 import net.Vicente.tutorialmod.TutorialMod;
+import net.Vicente.tutorialmod.entity.ModEntityTypes;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -20,8 +22,12 @@ public class ModItems {
     public static final RegistryObject<Item> RAW_ZIRCON = ITEMS.register("raw_zircon",
             ()->new Item(new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
 
-
-
+    public static final RegistryObject<Item> MOD_SKELETON_EGG = ITEMS.register("mod_skeleton_egg",
+            ()-> new ForgeSpawnEggItem(ModEntityTypes.MODSKELETON, 0x22b341, 0x19732e,
+                    new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
+    public static final RegistryObject<Item> MOD_ZOMBIE_EGG = ITEMS.register("mod_zombie_egg",
+                ()-> new ForgeSpawnEggItem(ModEntityTypes.MODZOMBIE, 0x22b341, 0x19732e,
+                        new Item.Properties().tab(ModCreativeModeTab.TUTORIAL_TAB)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

@@ -2,9 +2,21 @@
   "item.tutorialmod.zircon": "Zircon",
   "item.tutorialmod.raw_zircon": "Raw Zircon",
 
+  "item.tutorialmod.mod_skeleton_egg": "Mod Skeleton Egg",
+  "item.tutorialmod.mod_zombie_egg": "Mod Zombie Egg",
+
   "block.tutorialmod.ziron_block": "Block of Zircon",
   "block.tutorialmod.ziron_ore": "Zircon Ore",
   "block.tutorialmod.deepslate_zircon_ore": "Deepslate Zircon Ore",
 
-  "itemGroup.tutorialtab": "Zircon Tutorial Tab"
+  "itemGroup.tutorialtab": "Zircon Tutorial Tab",
+
+  "enchantment.tutorialmod.bow_abilities": "Bow Abilities",
+  "enchantment.tutorialmod.shovel_abilities": "Shovel Abilities",
+
+  "key.category.tutorialmod.tutorial": "Tutorial Mod",
+  "key.tutorialmod.drink_water": "Drink Water",
+
+  "message.tutorialmod.drink_water": "Drinking Water",
+  "message.tutorialmod.no_water": "No Water nearby!"
 }
